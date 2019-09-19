@@ -31,5 +31,12 @@ Route::middleware(['auth'])
     ->namespace('Backend')
     ->name('admin.')
     ->group(function(){
+
     Route::get('/', 'DashboardController@index')->name('index');
+
+    Route::get('/setting', 'SettingController@index')->name('setting.index');
+
+    Route::post('/setting/store', 'SettingController@store')->name('setting.store');
+    Route::post('/setting/set-webhook', 'SettingController@setWebhook')->name('setting.setwebhook');
+    Route::post('/setting/get-webhook-info', 'SettingController@getWebhookInfo')->name('setting.getwebhookinfo');
 });
