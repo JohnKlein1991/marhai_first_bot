@@ -31,7 +31,7 @@ $factory->defineAs(User::class, 'admin', function (Faker $faker) {
         'name' => 'admin',
         'email' => 'buk2018irinam@gmail.com',
         'email_verified_at' => now(),
-        'password' => '111111',
+        'password' => bcrypt('111111'),
         'remember_token' => Str::random(10),
     ];
 });
