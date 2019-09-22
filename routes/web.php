@@ -13,16 +13,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SiteController@index');
 
 Auth::routes();
 
-Route::match(['get', 'post'],'/register', function (){
-   Auth::logout();
-   return redirect('/');
-});
+Route::match(['get', 'post'],'/register', 'SiteController@register');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
