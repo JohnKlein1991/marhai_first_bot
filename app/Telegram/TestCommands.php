@@ -3,7 +3,7 @@
 namespace App\Telegram;
 
 
-use Telegram\Bot\Commands\Command;
+use \Telegram\Bot\Commands\Command;
 
 /**
  * Class HelpCommand.
