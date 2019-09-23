@@ -34,7 +34,7 @@ class SettingController extends Controller
             'setwebhook',
             [
             'query' => [
-                'url' => $request->url()
+                'url' => $request->url
             ]
         ]);
         return redirect()->route('admin.setting.index')->with('status',  $result);
