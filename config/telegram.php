@@ -33,8 +33,8 @@ return [
     */
     'bots'                         => [
         'marhai_first_bot' => [
-            'username'            => 'marhai_first_bot',
-            'token'               => '856070548:AAFYHkD_tHm3tiXoGqJ2V8b740Wb2D2wE3Y',
+            'username'            => env('TG_BOT_USERNAME'),
+            'token'               => env('TG_BOT_TOKEN'),
 //            'certificate_path'    => env('TELEGRAM_CERTIFICATE_PATH', 'YOUR-CERTIFICATE-PATH'),
 //            'webhook_url'         => env('TELEGRAM_WEBHOOK_URL', 'YOUR-BOT-WEBHOOK-URL'),
             'commands'            => [

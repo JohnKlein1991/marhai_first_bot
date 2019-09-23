@@ -48,7 +48,7 @@
                     >
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit" >Send</button>
+            <button class="btn btn-primary" type="submit" >Save</button>
         </form>
         <form action="{{ route('admin.setting.setwebhook') }}" method="post" id="setwebhook" style="display: none;">
             @csrf
