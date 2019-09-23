@@ -21,6 +21,8 @@ Route::match(['get', 'post'],'/register', 'SiteController@register');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/webhook', 'TelegramHookHandlerController@handle');
+
 Route::middleware(['auth'])
     ->prefix('admin')
     ->namespace('Backend')
