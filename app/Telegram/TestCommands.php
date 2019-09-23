@@ -36,7 +36,7 @@ class TestCommands extends Command
         foreach ($commands as $name => $handler) {
             $text .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
         }
-        $text = json_encode($_POST);
+//        $text = json_encode($_POST);
         $this->replyWithMessage(compact('text'));
     }
 }
