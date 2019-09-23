@@ -13,7 +13,7 @@ class TestCommands extends Command
     /**
      * @var string Command Name
      */
-    protected $name = 'help';
+    protected $name = 'test';
 
     /**
      * @var array Command Aliases
@@ -23,7 +23,7 @@ class TestCommands extends Command
     /**
      * @var string Command Description
      */
-    protected $description = 'Help command, Get a list of commands';
+    protected $description = 'You pushed test';
 
     /**
      * {@inheritdoc}
