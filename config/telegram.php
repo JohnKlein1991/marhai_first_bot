@@ -42,6 +42,7 @@ return [
                 App\Telegram\HookHandler::class,
                 App\Telegram\StartCommand::class,
                 App\Telegram\HelpCommand::class,
+                App\Telegram\KeyboardCommand::class
             ],
         ],
 
