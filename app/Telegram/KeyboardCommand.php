@@ -29,18 +29,18 @@ class KeyboardCommand extends Command
     {
          $this->replyWithChatAction(['action' => Actions::TYPING]);
          $this->replyWithMessage(['text' => 'Here is the keyboard for you:']);
-
-         $keyboard = [
-             ['A', 'B'],
-             ['C', 'D']
-         ];
-
-        $reply_markup = Telegram::replyKeyboardMarkup([
-            'keyboard' => $keyboard,
-            'resize_keyboard' => true,
-            'one_time_keyboard' => true
-        ]);
-
-        $this->replyWithMessage(['reply_markup' => $reply_markup]);
+//
+//         $keyboard = [
+//             ['A', 'B'],
+//             ['C', 'D']
+//         ];
+//
+//        $reply_markup = Telegram::replyKeyboardMarkup([
+//            'keyboard' => $keyboard,
+//            'resize_keyboard' => true,
+//            'one_time_keyboard' => true
+//        ]);
+//
+//        $this->replyWithMessage(['reply_markup' => $reply_markup]);
     }
 }
