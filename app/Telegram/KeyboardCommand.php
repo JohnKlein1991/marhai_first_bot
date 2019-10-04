@@ -41,21 +41,21 @@ class KeyboardCommand extends Command
             ['0']
         ];
 
-//        try {
-//            $reply_markup = Telegram::replyKeyboardMarkup([
-//                'keyboard' => $keyboard,
-//                'resize_keyboard' => true,
-//                'one_time_keyboard' => true
-//            ]);
-//
-//            $response = Telegram::sendMessage([
-//                'chat_id' => $chatId,
-//                'text' => 'Hello World',
-//                'reply_markup' => $reply_markup
-//            ]);
-//        }
-//        catch (Exception $e){
-//            $this->replyWithMessage(['text' => $e->getMessage()]);
-//        }
+        try {
+            $reply_markup = Telegram::replyKeyboardMarkup([
+                'keyboard' => $keyboard,
+                'resize_keyboard' => true,
+                'one_time_keyboard' => true
+            ]);
+
+            $response = Telegram::sendMessage([
+                'chat_id' => $chatId,
+                'text' => 'Hello World',
+                'reply_markup' => $reply_markup
+            ]);
+        }
+        catch (\Exception $e){
+            $this->replyWithMessage(['text' => $e->getMessage()]);
+        }
     }
 }
