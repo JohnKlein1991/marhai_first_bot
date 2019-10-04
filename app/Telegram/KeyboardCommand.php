@@ -41,8 +41,9 @@ class KeyboardCommand extends Command
             ['0']
         ];
 
+
         try {
-            $reply_markup = Telegram::replyKeyboardMarkup([
+            $reply_markup = Keyboard::make([
                 'keyboard' => $keyboard,
                 'resize_keyboard' => true,
                 'one_time_keyboard' => true
