@@ -30,20 +30,24 @@ class KeyboardCommand extends Command
          $this->replyWithChatAction(['action' => Actions::TYPING]);
          $this->replyWithMessage(['text' => 'Here is the keyboard for you:']);
 
-         $text = Telegram::getWebhookUpdates();
-         $this->replyWithMessage(['text' => json_encode($text)]);
-//
-//         $keyboard = [
-//             ['A', 'B'],
-//             ['C', 'D']
-//         ];
-//
-//        $reply_markup = Telegram::replyKeyboardMarkup([
-//            'keyboard' => $keyboard,
-//            'resize_keyboard' => true,
-//            'one_time_keyboard' => true
-//        ]);
-//
-//        $this->replyWithMessage(['reply_markup' => $reply_markup]);
+         $info = Telegram::getWebhookUpdates();
+         $chatId = $info['message']['chat']['id'];
+
+         $keyboard = [
+             ['A', 'B'],
+             ['C', 'D']
+         ];
+
+        $reply_markup = Telegram::replyKeyboardMarkup([
+            'keyboard' => $keyboard,
+            'resize_keyboard' => true,
+            'one_time_keyboard' => true
+        ]);
+
+        $response = Telegram::sendMessage([
+            'chat_id' => $chatId,
+            'text' => 'Hello World',
+            'reply_markup' => $reply_markup
+        ]);
     }
 }
