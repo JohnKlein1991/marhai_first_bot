@@ -6,6 +6,7 @@ namespace App\Telegram;
 use \Telegram\Bot\Commands\Command;
 use Telegram\Bot\Actions;
 use Telegram\Bot\Laravel\Facades\Telegram;
+use Telegram\Bot\Keyboard\Keyboard;
 
 /**
  * Class HelpCommand.
@@ -40,17 +41,21 @@ class KeyboardCommand extends Command
             ['0']
         ];
 
-        $reply_markup = Telegram::replyKeyboardMarkup([
-            'keyboard' => $keyboard,
-            'resize_keyboard' => true,
-            'one_time_keyboard' => true
-        ]);
+        try {
+            $reply_markup = Telegram::replyKeyboardMarkup([
+                'keyboard' => $keyboard,
+                'resize_keyboard' => true,
+                'one_time_keyboard' => true
+            ]);
 
-        $response = Telegram::sendMessage([
-            'chat_id' => $chatId,
-            'text' => 'Hello World',
-            'reply_markup' => $reply_markup
-        ]);
-
+            $response = Telegram::sendMessage([
+                'chat_id' => $chatId,
+                'text' => 'Hello World',
+                'reply_markup' => $reply_markup
+            ]);
+        }
+        catch (Exception $e){
+            $this->replyWithMessage(['text' => $e->getMessage()]);
+        }
     }
 }
