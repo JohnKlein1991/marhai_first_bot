@@ -42,6 +42,5 @@ class HelpCommand extends Command
         }
 
         $this->replyWithMessage(['text' => $response]);
-        $this->triggerCommand('subscribe');
     }
 }
