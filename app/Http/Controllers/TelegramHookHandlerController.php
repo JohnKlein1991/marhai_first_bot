@@ -10,5 +10,6 @@ class TelegramHookHandlerController extends Controller
     public function handle()
     {
         Telegram::commandsHandler(true);
+        return 'OK';
     }
 }
