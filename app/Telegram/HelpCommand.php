@@ -27,7 +27,7 @@ class HelpCommand extends Command
     public function handle()
     {
         $this->replyWithChatAction(['action' => Actions::TYPING]);
-        $this->replyWithMessage(['text' => ['List of available commands:']]);
+        $this->replyWithMessage(['text' => 'List of available commands:']);
 
         $commands = $this->getTelegram()->getCommands();
 
