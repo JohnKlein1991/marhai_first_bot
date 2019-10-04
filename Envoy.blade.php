@@ -14,12 +14,28 @@
 @servers(['prod' => [$user . '@185.231.155.142']])
 
 @story('deploy')
+    rm_from_releases
     clone
     composer
     artisan
     chmod
     update_symlinks
 @endstory
+
+@story('test')
+    test_task
+@endstory
+
+@task('test_task', ['on' => 'prod'])
+    cd /var/www/project
+    ls -l
+    echo '#1 Test task has been copleted'
+@endtask
+
+@task('rm_from_releases', ['on' => 'prod'])
+    rm -Rf /var/www/project/releases/*
+    echo '#0 Folder releases is empty'
+@endtask
 
 @task('clone', ['on' => 'prod'])
     mkdir -p {{ $release }}

@@ -30,13 +30,6 @@ class TestCommands extends Command
      */
     public function handle()
     {
-        $commands = $this->telegram->getCommands();
-
-        $text = '';
-        foreach ($commands as $name => $handler) {
-            $text .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
-        }
-//        $text = json_encode($_POST);
-        $this->replyWithMessage(compact('text'));
+         $this->replyWithChatAction(['action' => Actions::TYPING]);
     }
 }
