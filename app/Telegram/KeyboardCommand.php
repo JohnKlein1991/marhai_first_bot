@@ -29,6 +29,9 @@ class KeyboardCommand extends Command
     {
          $this->replyWithChatAction(['action' => Actions::TYPING]);
          $this->replyWithMessage(['text' => 'Here is the keyboard for you:']);
+
+         $text = Telegram::getWebhookUpdates();
+         $this->replyWithMessage(['text' => json_encode($text)]);
 //
 //         $keyboard = [
 //             ['A', 'B'],
