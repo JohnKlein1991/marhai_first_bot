@@ -27,16 +27,18 @@ class KeyboardCommand extends Command
      */
     public function handle()
     {
-         $this->replyWithChatAction(['action' => Actions::TYPING]);
-         $this->replyWithMessage(['text' => 'Here is the keyboard for you:']);
+        $this->replyWithChatAction(['action' => Actions::TYPING]);
+        $this->replyWithMessage(['text' => 'Here is the keyboard for you:']);
 
-         $info = Telegram::getWebhookUpdates();
-         $chatId = $info['message']['chat']['id'];
+        $info = Telegram::getWebhookUpdates();
+        $chatId = $info['message']['chat']['id'];
 
-         $keyboard = [
-             ['A', 'B'],
-             ['C', 'D']
-         ];
+        $keyboard = [
+            ['7', '8', '9'],
+            ['4', '5', '6'],
+            ['1', '2', '3'],
+            ['0']
+        ];
 
         $reply_markup = Telegram::replyKeyboardMarkup([
             'keyboard' => $keyboard,
@@ -49,5 +51,6 @@ class KeyboardCommand extends Command
             'text' => 'Hello World',
             'reply_markup' => $reply_markup
         ]);
+
     }
 }
