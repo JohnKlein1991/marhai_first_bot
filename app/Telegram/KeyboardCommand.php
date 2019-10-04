@@ -41,6 +41,6 @@ class KeyboardCommand extends Command
             'one_time_keyboard' => true
         ]);
 
-        $this->replyWithMessage(['text' => 'test alalal']);
+        $this->replyWithMessage(['reply_markup' => $reply_markup]);
     }
 }
